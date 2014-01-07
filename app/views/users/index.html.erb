@@ -1,0 +1,21 @@
+<h3>All Users List</h3>
+
+    <% @users.each do |user| %>
+
+      <%= div_for user do %>
+
+        <%= link_to "User #{user.firstname} #{user.lastname}", user %>
+        <font color='green'><%= user.email %></font>
+
+        <div class="actions">
+         <td><%= link_to 'View Detail', user %></td>
+         <td><%= link_to 'Edit', edit_user_path(user) %></td>
+         <td><%= link_to 'Delete User', user_path(user), method: :delete, remote: true, data: {confirm: 'Are you sure?'} %></td>
+         <p>
+        </div>
+
+      <% end %>
+
+    <% end %>
+
+<%= link_to 'Create New User', new_user_path %>

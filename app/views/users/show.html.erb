@@ -1,0 +1,15 @@
+<h1>User Information:</h1>
+
+<p>
+  <strong>User Name:</strong>
+  <%= @user.firstname %>
+  <%= @user.lastname %>
+</p>
+ 
+<p>
+  <strong>User Email Address:</strong>
+  <%= @user.email %>
+</p>
+
+<%= link_to 'Go Back', users_path %>
+<%= link_to 'Edit', edit_user_path %>
